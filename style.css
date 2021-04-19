@@ -1,24 +1,129 @@
 body {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: radial-gradient(
+      circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent
+    ),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+}
+canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.2fr 0.3fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
+  grid-gap: 0.9rem;
+}
+
+nav {
+  background-color: white;
+  opacity: 0.5;
+  grid-area: nav;
+}
+#navbar {
+  position: absolute;
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 15px;
+  float: right;
+}
+#navbar button {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  float: right;
+}
+
+main {
+  background-color: white;
+  opacity: 0.5;
+  grid-area: main;
+}
+#sidebar {
+  background-color: white;
+  opacity: 0.5;
+  grid-area: sidebar;
+}
+#content1 {
+  background-color: white;
+  opacity: 0.5;
+  grid-area: content1;
+}
+#content2 {
+  background-color: white;
+  opacity: 0.5;
+  grid-area: content2;
+}
+#content3 {
+  background-color: white;
+  opacity: 0.5;
+  grid-area: content3;
+}
+
+footer {
+  background-color: white;
+  opacity: 0.5;
+  grid-area: footer;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.8fr 1.5fr 1.2fr 1.5fr;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "content1"
+      "content2"
+      "content3"
+      "footer";
+  }
+  #navbar {
+    position: relative;
     width: 100%;
-    height: 100vh;
-    background-color: #000;
-    background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13),       transparent),
-      radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent)
   }
-  canvas {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-  }
+
   
-  a {
-    position: absolute;
-    bottom: 2vmin;
-    right: 2vmin;
-    color: rgba(255,255,255,0.2);
-    text-decoration: none;
-  }
+
   
-  a:hover {
-    color: #fff;
-  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
